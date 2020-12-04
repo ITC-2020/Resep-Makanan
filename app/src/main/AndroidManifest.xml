@@ -12,6 +12,7 @@
         <activity android:name=".recipe.RecipeDetailActivity"></activity>
         <activity android:name=".recipe.RecipeAddActivity" />
         <activity android:name=".Detail" />
+        <activity android:name=".Detail"></activity>master
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
