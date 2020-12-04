@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RecipesFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Recipes Fragment" />
+    <ImageView
+        android:id="@+id/iv_background_kiri"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/background_kiri" />
 
-</FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_background_kanan"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/background_kanan" />
+
+    <TextView
+        android:id="@+id/my_recipes"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="@string/my_recipes"
+        android:textAppearance="@style/my_recipes"
+        android:textFontWeight="900" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/my_recipes"
+            tools:listitem="@layout/cetak_recipe"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/rL"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/my_recipes"
+        android:layout_marginTop="80dp"
+        android:layout_height="250dp"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/iv_recipe_book_logo"
+            android:layout_width="153dp"
+            android:layout_height="153dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/recipe_book_logo" />
+
+        <TextView
+            android:id="@+id/what_do_you"
+            android:layout_width="150dp"
+            android:layout_height="21dp"
+            android:textFontWeight="1000"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200dp"
+            android:text="Add Your First Recipe"
+            android:textAppearance="@style/what_do_you"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="223dp"
+        android:layout_height="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="486dp"
+        android:text="@string/button_recipe"
+        android:textAppearance="@style/button_recipe"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+        android:background="@drawable/rectangle_2"
+        android:elevation="4dp"/>
+
+</RelativeLayout>
