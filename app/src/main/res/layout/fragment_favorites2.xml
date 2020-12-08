@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoritesFragment">
+    tools:context=".FavoritesFragment2">
 
     <ImageView
         android:id="@+id/iv_background_kiri"
@@ -39,24 +39,15 @@
             android:textSize="28sp"
             android:textColor="#7278A4"/>
 
-        <ImageView
-            android:layout_marginTop="40dp"
-            android:id="@+id/iv_favempty"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:src="@drawable/emptyfav" />
-
-        <TextView
-            android:id="@+id/tv_favempty"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favorites"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="There's no recipe you liked yet"
-            android:fontFamily="@font/poppins_bold"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="#54000000"/>
+            tools:listitem="@layout/cetak_menu"
+            android:layout_below="@+id/tv_categories"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            />
 
     </LinearLayout>
 
