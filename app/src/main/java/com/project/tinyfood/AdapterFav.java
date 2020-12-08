@@ -12,36 +12,30 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.Viewholder> {
+public class AdapterFav extends RecyclerView.Adapter<AdapterFav.Viewholder> {
     ArrayList<Data> data;
-
-    private OnItemClickListener listener;
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
-    }
-
-    public interface OnItemClickListener {
-        void ClickItem(int position, Data data);
-    }
-
-    public Adapter(ArrayList<Data> data) {
+    public AdapterFav(ArrayList<Data> data) {
         this.data = data;
     }
+    private AdapterFav.OnFavItemClickListener favListener;
+    public void setOnItemClickListener(AdapterFav.OnFavItemClickListener listener) {
+        this.favListener = listener;
+    }
 
+    public interface OnFavItemClickListener {
+        void ClickItem(int position, Data data);
+    }
 
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cetak_menu, parent, false);
-
         return new Viewholder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.bind(data.get(position), listener);
-
+        holder.bind(data.get(position), favListener);
     }
 
     @Override
@@ -54,13 +48,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Viewholder> {
         TextView[] textView = new TextView[2];
         int[] textID = {R.id.tv_nama, R.id.tv_categories};
         ImageView imageView;
-
         public Viewholder(@NonNull View itemView) {
             super(itemView);
         }
-
         @SuppressLint("UseCompatLoadingForDrawables")
-        public void bind(final Data data, final OnItemClickListener OnItemClickListener) {
+        public void bind(final Data data, final OnFavItemClickListener OnFavItemClickListener) {
 
             final String[] dataText = {data.getTitle(), data.getCategory()};
             for (short i = 0; i < textID.length; i++) {
@@ -73,13 +65,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Viewholder> {
 
             imageView = itemView.findViewById(R.id.iv_foto);
             imageView.setImageDrawable(itemView.getResources().getDrawable(data.getDataImg()));
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION) {
-                        OnItemClickListener.ClickItem(position, data);
-                    }
+            itemView.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    OnFavItemClickListener.ClickItem(position, data);
                 }
             });
 
