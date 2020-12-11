@@ -66,7 +66,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                 public void onClick(View v) {
                     Intent intent = new Intent(activity, RecipeDetailActivity.class);
                     intent.putExtra(RecipeDetailActivity.EXTRA_NOTE, data);
-                    activity.startActivityForResult(intent, RecipeDetailActivity.REQUEST_EDIT);
+                    activity.startActivityForResult(intent, RecipeDetailActivity.REQUEST_DELETE);
                 }
             });
         }

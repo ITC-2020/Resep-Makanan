@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recipe.RecipeEditActivity">
+
+    <ImageView
+        android:id="@+id/iv_background_kiri"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/background_kiri" />
+
+    <ImageView
+        android:id="@+id/iv_background_kanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/background_kanan_kecil" />
+
+
+    <ImageView
+        android:id="@+id/iv_backarrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+    <TextView
+        android:id="@+id/add_recipe"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="70dp"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:textFontWeight="900"
+        android:text="Edit Recipe"
+        android:textAppearance="@style/my_recipes"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="83dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="195dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        android:layout_alignLeft="@id/add_recipe"
+        android:background="@drawable/rectangle_2"
+        android:elevation="4dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="top"
+            android:text="Food Name"
+            android:textColor="#D9000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ed_title"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:layout_toRightOf="@id/title"
+            android:hint="What are you cooking?"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/ingredients"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="213dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="top"
+            android:text="Ingredients"
+            android:textColor="#D9000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ed_ingredient"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="234dp"
+            android:hint="What ingredients do you need?"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/instructionts"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="290dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:gravity="top"
+            android:text="Instructions"
+            android:textColor="#D9000000"
+            android:textSize="16sp" />
+        <EditText
+            android:id="@+id/ed_instruction"
+            android:layout_width="310dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="311dp"
+            android:hint="How do you make it?"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/notes"
+            android:layout_width="87dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="414dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:gravity="top"
+            android:text="Notes"
+            android:textColor="#D9000000"
+            android:textSize="16sp" />
+        <EditText
+            android:id="@+id/ed_note"
+            android:layout_width="310dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="435dp"
+            android:hint="Anything you want to talk about this recipe?"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
