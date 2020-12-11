@@ -34,13 +34,12 @@ public class datadummypasta {
 
 
     public HashMap<String, List<String>> getData () {return content;}
-    public int [] getImgFood() {return imgFood; }
 
     public ArrayList<Data> getAlldatadummy(){
         ArrayList<Data> list = new ArrayList<>();
         for(short i=0 ; i < this.data[0].length;i++)
         {
-            Data data = new Data(getData(), getImgFood(),i);
+            Data data = new Data(getData(), imgFood[i],i);
             list.add(data);
 
         }
