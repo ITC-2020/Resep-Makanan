@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import com.project.tinyfood.database.RecipeDao;
 import com.project.tinyfood.database.RecipeDatabase;
 import com.project.tinyfood.model.Recipe;
 import com.project.tinyfood.recipe.RecipeAddActivity;
+import com.project.tinyfood.recipe.RecipeDetailActivity;
+import com.project.tinyfood.recipe.RecipeEditActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +92,18 @@ public class RecipesFragment extends Fragment implements View.OnClickListener{
                 loadData();
                 rL.setVisibility(View.GONE);
                 showSnackbar("Data Added Successfully");
+            }
+        }
+        else if (requestCode == RecipeDetailActivity.RESULT_DELETE) {
+            if (resultCode == RecipeDetailActivity.RESULT_DELETE) {
+                loadData();
+                showSnackbar("Data Deleted Successfully");
+            }
+        }
+        else if (requestCode == RecipeEditActivity.REQUEST_EDIT) {
+            if (resultCode == RecipeEditActivity.RESULT_EDIT) {
+                loadData();
+                showSnackbar("Data Edited Successfully");
             }
         }
     }

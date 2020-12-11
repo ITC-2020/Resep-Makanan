@@ -17,23 +17,27 @@
             android:id="@+id/recipe_image"
             android:scaleType="centerCrop" />
 
-        <ImageView
-            android:id="@+id/edit"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="250dp"
-            android:padding="2dp"
-            android:layout_marginTop="22dp"
-            android:src="@drawable/edit"/>
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="230dp"
+                android:padding="2dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/edit"/>
+
 
         <ImageView
             android:id="@+id/delete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:padding="2dp"
+            android:layout_marginLeft="2dp"
             android:layout_toRightOf="@id/edit"
             android:layout_marginTop="22dp"
-            android:src="@drawable/delete"/>
+            android:src="@drawable/delete"
+            app:showAsAction="always"/>
 
         <TextView
             android:layout_width="250dp"
